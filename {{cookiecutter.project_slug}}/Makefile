@@ -37,27 +37,27 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr .pytest_cache
 
 lint: ## check style
-	ruff check app tests
+	@uv run ruff check app tests
 
 test: ## run tests quickly with the default Python
-	pytest . 
+	@uv run pytest . 
 
 coverage: ## check code coverage quickly with the default Python
-	coverage run --source . -m pytest
-	coverage report -m
-	coverage html
+	@uv run coverage run --source . -m pytest
+	@uv run coverage report -m
+	@uv run coverage html
 
 release: dist ## package and upload a release
-	twine upload dist/*
+	@uv run twine upload dist/*
 
 dist: clean install-build ## builds source and wheel package
-	python -m build --sdist --wheel 
+	@uv run python -m build --sdist --wheel 
 
 install-build: clean ## install the package to the active Python's site-packages for development
-	pip install '.[build]'
+	@uv run pip install '.[build]'
 
 install-dev: clean ## install the package to the active Python's site-packages for development
-	pip install -e '.[dev]'
+	@uv run pip install -e '.[dev]'
 
 install: clean ## install the package to the active Python's site-packages
-	pip install .
+	@uv run pip install .

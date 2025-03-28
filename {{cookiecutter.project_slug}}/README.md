@@ -12,15 +12,14 @@ Here's how to set up `{{ cookiecutter.project_slug }}`.
     git clone git@github.com:{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}.git
     ```
 
-3. Install your local copy into a virtualenv.:
+2. Install your local copy into a virtualenv.:
    ``` 
-   python3 -m venv .venv
-   source .venv/bin/activate
+   uv v 
    make install
    ```
-4. Run the application with:
+3. Run the application with:
    ``` 
-    {{cookiecutter.project_slug}}
+    uv run {{cookiecutter.project_slug}}
    ```
 ## Features
 * TODO
