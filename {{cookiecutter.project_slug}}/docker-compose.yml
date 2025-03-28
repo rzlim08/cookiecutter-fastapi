@@ -15,6 +15,7 @@ services:
       - DATABASE_USER=postgres
       - DATABASE_PASSWORD=postgres
       - DATABASE_NAME={{cookiecutter.project_slug}}
+      - PYTHONPATH='.'
     depends_on:
       - db
   db:

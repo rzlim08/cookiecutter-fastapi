@@ -6,7 +6,8 @@ from app.helpers import get_db_session
 import sqlalchemy as sa
 from pydantic import BaseModel, ConfigDict
 
-from app.models.models import Entry as EntryDB
+# example model - Delete this model and add your own models
+from app.models.base import Entry as EntryDB
 
 
 router = APIRouter(
@@ -31,7 +32,7 @@ async def get_example(
     session: AsyncSession = Depends(get_db_session),
 ) -> list[Entry]:
     """
-    Get all entries from the leaderboard.
+    Get all entries.
     """
     stmt = sa.select(EntryDB)
     result = await session.execute(stmt)
@@ -41,7 +42,7 @@ async def get_example(
 @router.post("/")
 async def add_entry(entry: Entry, session: AsyncSession = Depends(get_db_session)):
     """
-    Add a new entry to the leaderboard.
+    Add a new entry.
     """
     session.add(EntryDB(
         **entry.model_dump()
