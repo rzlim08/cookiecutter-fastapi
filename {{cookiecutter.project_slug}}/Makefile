@@ -53,11 +53,11 @@ release: dist ## package and upload a release
 dist: clean install-build ## builds source and wheel package
 	@uv run python -m build --sdist --wheel 
 
-install-build: clean ## install the package to the active Python's site-packages for development
-	@uv run pip install '.[build]'
+install-build: clean ## install the package to the active Python's site-packages for packaging
+	@uv pip install '.[build]'
 
 install-dev: clean ## install the package to the active Python's site-packages for development
-	@uv run pip install -e '.[dev]'
+	@uv pip install -e '.[dev]'
 
 install: clean ## install the package to the active Python's site-packages
-	@uv run pip install .
+	@uv pip install .
