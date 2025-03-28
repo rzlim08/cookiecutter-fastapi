@@ -3,6 +3,12 @@
 * Code first, configuration later
 
 ### How to run this: 
+If you have `uv` installed already just run:
+```
+uvx cookiecutter git@github.com:rzlim08/cookiecutter-modern.git
+```
+
+Otherwise try:
 
 ```
 pip install -U cookiecutter 
