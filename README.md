@@ -5,7 +5,7 @@
 ### How to run this: 
 If you have `uv` installed already just run:
 ```
-uvx cookiecutter git@github.com:rzlim08/cookiecutter-modern.git
+uvx cookiecutter git@github.com:rzlim08/cookiecutter-fastapi.git
 ```
 
 Otherwise try:
@@ -20,7 +20,7 @@ brew install cookiecutter # for macos
 ```
 
 ```
-cookiecutter git@github.com:rzlim08/cookiecutter-modern.git
+cookiecutter git@github.com:rzlim08/cookiecutter-fastapi.git
 ```
 
 A cookiecutter template heavily influenced by: 
@@ -32,12 +32,23 @@ https://github.com/audreyfeldroy/cookiecutter-pypackage
 * Commits to a more modern structure. I found it confusing that the above package contains `requirements-dev.txt`, `pyproject.toml`, `setup.py` etc. It makes it difficult to know which files to change to make configurations. 
 * No doc building (yet). I might add this in later, but I find that this just confuses things. 
 
-* The goal is to simply be able to use the `cookiecutter` command, install the package, and be able to run `package-name`. This way the *first* thing that coders need to worry about is coding. 
+* The goal is to simply be able to use the `cookiecutter` command, install the package, and be able to run `make start`. This way the *first* thing that coders need to worry about is coding. 
 
 ### The Stack
+
+## Development
 * `coverage`
 * `pytest`
 * `mypy`
 * `ruff`
 * `Makefile` - for workflow coordination
 * `pyproject.toml` - for all python packaging/distribution configuration
+
+## Web
+* `fastapi`
+* `alembic` - migrations
+* `pydantic` - input validation
+* `sqlalchemy` - database connection
+
+## Database
+* `postgresql`
