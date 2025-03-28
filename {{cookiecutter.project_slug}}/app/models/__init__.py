@@ -1,3 +1,3 @@
-from models import Base, meta
+from app.models.base import Base, meta
 
 __all__ = ["Base", "meta"]
