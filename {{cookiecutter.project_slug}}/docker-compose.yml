@@ -1,0 +1,31 @@
+services:
+  {{cookiecutter.project_slug}}:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args: 
+        - BUILDKIT_INLINE_CACHE=1
+    volumes:
+      - .:/app
+    ports:
+      - {{cookiecutter.webapp_port}}:{{cookiecutter.webapp_port}}
+    environment:
+      - DATABASE_HOST=db.{{cookiecutter.project_slug}}
+      - DATABASE_PORT=5432
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=postgres
+      - DATABASE_NAME={{cookiecutter.project_slug}}
+    depends_on:
+      - db
+  db:
+    image: public.ecr.aws/docker/library/postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: {{cookiecutter.project_slug}}
+      PGDATA: /var/lib/{{cookiecutter.project_slug}}/data
+networks:
+  default:
+    name: {{cookiecutter.project_slug}}
+    driver: overlay
+    attachable: true

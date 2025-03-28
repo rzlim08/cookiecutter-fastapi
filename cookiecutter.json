@@ -14,5 +14,6 @@
     "GNU General Public License v3",
     "Not open source"
   ],
+  "webapp_port": 3000,
   "__gh_slug": "{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}"
 }

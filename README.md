@@ -1,5 +1,5 @@
-## Cookiecutter-Modern
-* A modern, but simple cookiecutter python template
+## Cookiecutter-FastAPI
+* A cookiecutter template for setting up a simple fastapi project
 * Code first, configuration later
 
 ### How to run this: 
