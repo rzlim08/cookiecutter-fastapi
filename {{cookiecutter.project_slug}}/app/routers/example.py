@@ -2,12 +2,12 @@
 
 from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
-from app.helpers import get_db_session 
+from helpers import get_db_session 
 import sqlalchemy as sa
 from pydantic import BaseModel, ConfigDict
 
 # example model - Delete this model and add your own models
-from app.models.base import Entry as EntryDB
+from models.base import Entry as EntryDB
 
 
 router = APIRouter(
