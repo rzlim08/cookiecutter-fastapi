@@ -19,7 +19,7 @@ Here's how to set up `{{ cookiecutter.project_slug }}`.
    ```
 3. Run the application with:
    ``` 
-    uv run {{cookiecutter.project_slug}}
+    make init
    ```
 ## Features
 * TODO
