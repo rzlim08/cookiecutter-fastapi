@@ -18,8 +18,9 @@ Here's how to set up `{{ cookiecutter.project_slug }}`.
    make install
    ```
 3. Run the application with:
-   ``` 
-    make init
+   ```
+   uv lock 
+   make init
    ```
 ## Features
 * TODO
