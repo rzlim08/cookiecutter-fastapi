@@ -32,7 +32,7 @@ https://github.com/audreyfeldroy/cookiecutter-pypackage
 * Commits to a more modern structure. I found it confusing that the above package contains `requirements-dev.txt`, `pyproject.toml`, `setup.py` etc. It makes it difficult to know which files to change to make configurations. 
 * No doc building (yet). I might add this in later, but I find that this just confuses things. 
 
-* The goal is to simply be able to use the `cookiecutter` command, install the package, and be able to run `make start`. This way the *first* thing that coders need to worry about is coding. 
+* The goal is to simply be able to use the `cookiecutter` command, install the package, and be able to run `make up`. This way the *first* thing that coders need to worry about is coding. 
 
 ### The Stack
 
