@@ -10,7 +10,7 @@ from routers.example import router as example_router
 from settings import Settings
 
 
-def get_vcp_app(settings: Settings) -> FastAPI:
+def get_app(settings: Settings) -> FastAPI:
     origins = [
         "http://localhost:3000",
     ]
@@ -30,7 +30,7 @@ def get_vcp_app(settings: Settings) -> FastAPI:
     return _app
 
 settings = Settings.load()
-app = get_vcp_app(settings=settings)
+app = get_app(settings=settings)
 
 ## Add a basic fastapi endpoint
 @app.get("/")
