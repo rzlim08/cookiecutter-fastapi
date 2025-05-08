@@ -62,6 +62,9 @@ install-dev: clean ## install the package to the active Python's site-packages f
 install: clean ## install the package to the active Python's site-packages
 	@uv pip install .
 
+uv.lock: ## create uv lock file
+	uv lock
+
 #### Docker ################################################
 export docker_compose_run:=docker compose run --rm
 export docker_compose:=docker compose
@@ -71,7 +74,7 @@ docker-build: ## Build docker containers
 	$(docker_compose) build
 
 .PHONY: init
-init: ## Initialize the local dev environment
+init: uv.lock ## Initialize the local dev environment
 	$(docker_compose) up -d
 	$(MAKE) generate-migration
 	$(MAKE) apply-migrations
